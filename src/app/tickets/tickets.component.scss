@@ -1,0 +1,89 @@
+ul.tickets, ul.legs {
+    list-style: none;
+    padding: 0
+}
+
+div.ticket-container {
+    border: 1px solid #CCCCCC;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    width: 600px;
+}
+
+div.tikcet-deparr-date {
+    font-size: 17px;
+    font-weight: bold
+}
+
+span.highlight {
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 2px 7px 2px 7px;
+    margin-right: 5px;
+}
+
+.red {
+    background-color: #ff5c5c;
+    color: #f8f8f8;
+}
+
+.blue {
+    background-color: #449bff;
+    color: #f8f8f8;
+}
+
+.detail-button {
+    float: right;
+    background-color: #44c767;
+    border-radius: 10px;
+    border: 1px solid #18ab29;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 10px;
+    padding: 6px 11px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.detail-button:hover {
+	background-color:#5cbf2a;
+}
+
+.detail-button:active {
+	position:relative;
+	top:1px;
+}
+
+.ticket-details {
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    width: 600px;
+    font-size: 12px;
+}
+
+.leg-container {
+    border: 1px solid #CCCCCC;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    width: 96%;
+}
+
+@media screen and (max-width: 767px) {
+    div.ticket-container, .ticket-details {
+        width: 510px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    div.ticket-container, .ticket-details {
+        width: 410px;
+    }
+}

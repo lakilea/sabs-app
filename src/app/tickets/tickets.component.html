@@ -1,0 +1,41 @@
+<ul class="tickets">
+    <li *ngFor="let item of getTicketList()" class="ticket">
+      <div class="ticket-container">
+          <div class="tikcet-deparr-date">
+            {{ getFormattedDate(item.DepDate) }} {{ getFormattedTime(item.DepTime) }}
+          </div>
+          <div class="ticket-deparr">
+            {{ item.DepStationCodeFull }} ({{ item.DepStationCode }}) > {{ item.ArrStationCodeFull }} ({{ item.ArrStationCode }})
+          </div>
+          <hr>
+          <div class="tikcet-deparr-extra">
+              <span class="highlight blue">Adults : {{ item.Adults }}</span>
+              <span class="highlight red">Arrival : {{ getFormattedDate(item.ArrDate) }} {{ getFormattedTime(item.ArrTime) }}</span>
+              <span class="highlight blue">Number Of Legs : {{ item.OutBoundLegs }}</span>
+
+              <a (click)="item.expanded = true" *ngIf="!item.expanded" class="detail-button">More Info</a>
+          </div>
+      </div>
+
+      <div *ngIf="item.expanded" class="ticket-details" [@fadeInOut]>
+            <a (click)="item.expanded = false" class="detail-button">X</a>
+        Legs :
+
+        <ul class="legs">
+            <li *ngFor="let leg of item.Legs" class="leg">
+                <div class="leg-container">
+                    <div class="leg-deparr">
+                        {{ leg.DepStnFull }} ({{ leg.DepStn }}) > {{ leg.ArrStnFull }} ({{ leg.ArrStn }})
+                    </div>
+                    <div class="leg-deparr-info">
+                        Departure : {{ getFormattedDate(leg.DepDate) }} {{ getFormattedTime(leg.DepTime) }}
+                    </div>
+                    <div class="leg-deparr-info">
+                        Arrival : {{ getFormattedDate(leg.ArrDate) }} {{ getFormattedTime(leg.ArrTime) }}
+                    </div>
+                </div>
+            </li>
+        </ul>
+      </div>
+    </li>
+</ul>
